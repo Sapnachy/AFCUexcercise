@@ -1,0 +1,32 @@
+﻿<h2>Login</h2>
+
+
+<div id="logindiv">    
+    <div class="form-horizontal">
+        <div class="form-group">
+            <span class="control-label col-md-2">Email*</span>
+            <div class="col-md-10">
+                <input type="text" id="email" v-model="email" class="form-control" />
+                @*@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+        <div class="form-group">
+            <span class="control-label col-md-2">Password*</span>
+            <div class="col-md-10">
+                <input type="password" id="password" v-model="password" class="form-control" />
+                @*@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })*@                
+            </div>
+        </div>        
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Login" class="btn btn-primary" v-on:click="onSubmit" />
+                <a href="/Registeration/Create" >Register</a>
+                <div v-if="errorMessage != null" class="text-danger">
+                    {{errorMessage}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="~/Scripts/loginVue.js"></script>
